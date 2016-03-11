@@ -1,0 +1,8 @@
+{
+    "name": "Internationalisation",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "cloud4strife",
+    "contributors": [],
+    "dependencies": {}
+}
