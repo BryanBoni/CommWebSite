@@ -28,28 +28,45 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
                             <li class="active"><a data-toggle="tab" href="#Accueil"> Accueil </a></li>
-                            <li><a data-toggle="tab"  href="#"> Où Partir ? </a></li>
-                            <li><a data-toggle="tab"  href="#"> Contact </a></li>
+                            <li><a data-toggle="tab"  href="#OuPartir"> Où Partir ? </a></li>
+                            <li><a data-toggle="tab"  href="#Contact"> Contact </a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-        
-        <div id = "textContent" class="container-fluid text-center">    
+
+        <div id = "textContent" class="container-fluid">  
             <div  class="row content">
-                <div class="col-sm-2 sidenav"></div>
-                <div class="col-sm-8 text-left"> 
-                    <center><h1>Pourquoi partir à l'étranger ?</h1></center>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <hr>
-                    <center><h1>Pays Concernés (coloré en <span style="color:#FF0000">rouge</span>)</h1></
-                    <p>Lorem ipsum...</p>
+                <div class="col-lg-2 col-sm-1 col-md-1  sidenav"></div>
+                
+                <div class = "tab-content col-lg-8 col-md-10  col-sm-10 text-justify">
+                    <!--Accueil content -->
+                    
+                    <div id="Accueil" class="tab-pane fade in active"> 
+                        <div id="leText"></div>
+                    </div>
+                    
+                    
+
+                    <!--Où Partir -->
+                    <div id="OuPartir" class="tab-pane fade">
+                        
+                            <center><h1>Liste des pays où partir</h1></center>
+                            <div id="leText"></div>
+                    </div>
+
+                    <!--Contact -->
+                    <div id="Contact" class="tab-pane fade">
+                        <center><h1>Liste des contacts</h1></center>
+                        <div id="leText"></div>
+                    </div>
                 </div>
-                <div class="col-sm-2 sidenav"></div>
+                
+                
+                <div class="col-sm-1 col-md-1  col-lg-2 sidenav"></div>
             </div>
         </div>
-        
         <footer class="container-fluid text-center">
             <p>Iut Lyon 1 | mars 2016</p>
         </footer>
