@@ -27,7 +27,7 @@ window.addEventListener("load", function () {
             var req = new XMLHttpRequest();
             var i = 0;
             var choices = "";
-            req.open("GET", jsonName + ".json");
+            req.open("GET", "./" + jsonName + ".json");
             req.onreadystatechange = function () {
                 if (req.readyState === 4) {
                     if (req.status === 200) { //status http (200 pour réussite 400 pour bad request
@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
                          */
                     } else {
                         //in case the request is  not good, display an the console the error number . 
-                        conole.log("Error:" + req.status);
+                        console.log("Error:" + req.status);
                     }
                 }
             };
