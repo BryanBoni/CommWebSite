@@ -9,6 +9,12 @@
 
 #textContent{
     border: 0px;
+    background-color: #cccccc;
+}
+
+#textContent2{
+    padding: 10px;
+    border-radius: 5px;
     background-color: white;
 }
 
@@ -37,7 +43,7 @@
 footer {
     background-color: #555;
     color: white;
-    padding: 15px;
+    padding: 10px;
     position:fixed;
     left:0px;
     bottom:0px;
