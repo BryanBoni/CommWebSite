@@ -2,24 +2,44 @@ window.addEventListener("load", function () {
     /*
      * Containt all the code of the javascript file, load when the page showup. 
      */
-    window.addEventListener("hashchange", display, false); //setting the event listener who will catch the moment when we change the url
-    display();//first call of the function.
+    document.getElementById("ac").addEventListener("click", function(){
+        display("ac");
+    }, false); //setting the event listener who will catch the moment when we change the url
+    document.getElementById("OP").addEventListener("click", function(){
+        display("OP");
+    }, false); //setting the event listener who will catch the moment when we change the url
+    document.getElementById("con").addEventListener("click", function(){
+        display("con");
+    }, false); //setting the event listener who will catch the moment when we change the url
+    
+    
+    display("ac");//first call of the function.
 
-    function display() {
+    function display(page) {
         /*
          * This function verify the current url and if we don't have an #[number] 
          * after index.html, we do an ajaxCall for "chapitre1.json",
          * else we take the number after the # and send in parameter for the function ajaxCall 
          */
-        var CheminComplet = document.location.href;
-        if ("index.html" !== CheminComplet.substring(CheminComplet.lastIndexOf("/") + 1)) {
-            var CheminRepertoire = CheminComplet.substring(0, CheminComplet.lastIndexOf("#"));
-            var jsonName = CheminComplet.substring(CheminComplet.lastIndexOf("#") + 1);
-            ajaxCall(jsonName);
-        } else {
-            ajaxCall("Accueil");
+        //var CheminComplet = document.location.href;
+        var jsonName = null;
+        var e = null;
+        switch(page){
+            case "ac":
+                jsonName = "Accueil";
+                e = 1;
+                break;
+            case "OP":
+                jsonName = "OuPartir";
+                e = 2;
+                break;
+            case "con":
+                jsonName = "Contact";
+                e = 3;
+                break;
         }
-        function ajaxCall(jsonName) {
+        ajaxCall(jsonName, e);
+        function ajaxCall(jsonName,e) {
             /*
              * this function is used to make an ajaxcall to retrive a json file, the number
              * pass in parameter give the number of the "chapitre[number].json" file
@@ -32,10 +52,10 @@ window.addEventListener("load", function () {
                 if (req.readyState === 4) {
                     if (req.status === 200) { //status http (200 pour réussite 400 pour bad request
                         jsonObj = JSON.parse(req.responseText);
-
+                        
                         console.log(jsonObj.txt);//verify in the console the content of jsonObj.txt
-                        document.getElementById("leText").innerHTML = jsonObj.txt;//Display the text of the current situation of the quest
-
+                        document.getElementById("leText"+e).innerHTML = jsonObj.txt;//Display the text of the current situation of the quest
+                       
                         /*while (i < jsonObj.links.length) {//if thera are more than one choice it loop until there no more choice left on the json file
                          choices += "<div class = \"choices\"><a href = \"" + jsonObj.links[i].link + "\"> " + jsonObj.links[i].txt + "</a></div>";
                          i++;

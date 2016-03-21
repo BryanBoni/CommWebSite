@@ -18,6 +18,27 @@
     background-color: white;
 }
 
+#leText1{
+    padding: 15px;
+}
+
+#leText2{
+    padding: 15px;
+}
+
+#page img{
+    width: 325px;
+    height: 200px;
+}
+
+#leText3{
+    padding: 15px;
+}
+
+#leText1 img{
+    width: 100%;
+}
+
 
 #bandeau{
     width: 500px;
